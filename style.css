@@ -1,0 +1,485 @@
+/* CSS Biến (Variables) để dễ dàng thay đổi màu sắc chủ đạo */
+:root {
+    --green-light: #e6f7ef;  /* Xanh bạc hà nhạt (nền) */
+    --green-primary: #22c55e; /* Xanh lá chính */
+    --green-dark: #166534;    /* Xanh lá đậm (chữ nổi bật) */
+    --green-forest: #14532d;  /* Xanh rừng sâu (header/footer) */
+    
+    --text-main: #334155;
+    --text-light: #64748b;
+    --white: #ffffff;
+    
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Cuộn trang mượt mà */
+}
+
+body {
+    background-color: var(--green-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--green-forest);
+    padding: 15px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--green-primary);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--green-primary);
+}
+
+/* Làm đẹp cho nút chuyển đổi ngôn ngữ */
+.lang-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    margin-left: 20px;
+}
+
+.lang-btn:hover {
+    background-color: white;
+    color: var(--green-primary); /* Đã sửa cho khớp biến mới */
+}
+
+/* --- Bố cục chung cho các phần (Sections) --- */
+section {
+    padding: 100px 5% 60px; /* Padding top lớn để không bị header che mất */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--green-dark);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--green-primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Hero Section (Trang chủ) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: var(--green-forest);
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 24px;
+    color: var(--green-primary);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: var(--text-light);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.education-box {
+    background: var(--white);
+    padding: 15px 20px;
+    border-left: 4px solid var(--green-primary);
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: var(--shadow);
+}
+
+.education-box i {
+    color: var(--green-primary);
+    margin-right: 10px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.3);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Grid (Lưới) dùng chung cho Projects và Interests --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* --- Card Styles (Thẻ thông tin) --- */
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid transparent;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--green-primary);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: var(--green-primary);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+}
+
+.card p, .card ul {
+    color: var(--text-light);
+    font-size: 15px;
+    list-style: none;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+}
+
+/* Background xen kẽ cho phần Projects */
+#projects {
+    background-color: var(--white);
+    max-width: 100%;
+}
+
+.projects-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--green-forest);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+/* --- Modal Lightbox (Phóng to ảnh) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    border: 3px solid var(--green-primary);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    color: var(--green-primary);
+}
+
+/* --- Responsive (Cho điện thoại) --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 120px;
+    }
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    nav {
+        display: none;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+}
+
+/* --- Các nút bấm (Buttons) liên hệ & tải CV --- */
+.contact-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--green-primary);
+    color: var(--white);
+    border: 2px solid var(--green-primary);
+    box-shadow: 0 4px 6px rgba(34, 197, 94, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--green-forest);
+    border: 2px solid var(--green-forest);
+}
+
+.btn-outline:hover {
+    background-color: var(--green-forest);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* --- Nhãn Kỹ năng / Công nghệ (Tags) --- */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tags span {
+    background-color: #f1f5f9;
+    color: var(--green-dark);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #cbd5e1;
+    transition: var(--transition);
+}
+
+.tags span:hover {
+    background-color: var(--green-light);
+    border-color: var(--green-primary);
+    color: var(--green-primary);
+}
+
+
+/* popup style */
+
+/* --- Khung Popup Chi tiết (Detail Modal) --- */
+.detail-modal {
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Tránh chạm viền trên điện thoại */
+}
+
+.detail-modal-content {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.detail-modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.detail-modal-close:hover {
+    color: var(--green-primary);
+    transform: rotate(90deg);
+}
+
+.detail-modal-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-modal-img-container {
+    flex: 1;
+    background-color: var(--green-light);
+    display: flex;
+}
+
+.detail-modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.detail-modal-text {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-modal-text h2 {
+    color: var(--green-forest);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.detail-modal-divider {
+    width: 50px;
+    height: 4px;
+    background-color: var(--green-primary);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.detail-modal-text p {
+    color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Chuột dạng bàn tay cho các ô có thể click */
+.popup-trigger {
+    cursor: pointer;
+}
+
+/* Responsive cho điện thoại: Xếp dọc popup */
+@media (max-width: 768px) {
+    .detail-modal-body {
+        flex-direction: column;
+    }
+    .detail-modal-img-container img {
+        height: 250px;
+    }
+    .detail-modal-text {
+        padding: 25px;
+    }
+    .detail-modal-text h2 {
+        font-size: 22px;
+    }
+}

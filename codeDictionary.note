@@ -1,0 +1,63 @@
+CODE DICTIONARY
+
+## 1. Ý Nghĩa Của Các Thẻ (HTML Semantic Tags)
+
+* `<header>`: **Phần đầu trang.** Chứa logo và thanh điều hướng. Luôn nổi lên trên cùng (fixed) khi cuộn trang.
+* `<nav>`: **Thanh điều hướng (Navigation).** Nơi chứa các liên kết `<a>` (Trang chủ, Dự án, Kỹ năng...) để người dùng bấm vào và di chuyển trong trang.
+* `<section>`: **Một phân khu nội dung.** Mỗi khối lớn như "Giới thiệu", "Kỹ năng", "Dự án" là một `section`.
+* `<footer>`: **Phần chân trang.** Chứa thông tin bản quyền và chữ ký (© 2024 Phan Hoàng Lan).
+* `<ul>` và `<li>`: **Danh sách không thứ tự (Unordered List).** Dùng để liệt kê ngoại ngữ, hoặc các gạch đầu dòng trong phần Sở thích.
+
+## 2. Giải Nghĩa Các "ID" (`id="..."`)
+
+ID là tên định danh **duy nhất** (không được trùng lặp) trên toàn trang web.
+
+### Nhóm ID làm Anchor Links:
+
+* `id="hero"`: Hero Section – thuật ngữ thiết kế chỉ phần màn hình đầu tiên đập vào mắt người xem (chứa lời chào, chức danh, ảnh đại diện).
+* `id="skills"`: liệt kê **Kỹ năng** (Code, hệ thống, ngôn ngữ).
+* `id="projects"`: trình bày các **Dự án** (Hành trình Tự do, PHARMA,...).
+* `id="interests"`: nói về **Sở thích** cá nhân.
+
+### Nhóm ID dùng cho tương tác JavaScript:
+
+* `id="lang-btn"`: **(Language Button).** Dùng để JS tìm và gắn sự kiện click lật qua lại giữa chữ "EN" và "VI".
+* `id="lightbox"`: **(Lightbox).** Khung nền đen mờ bao phủ toàn màn hình khi bạn bấm phóng to ảnh.
+* `id="lightbox-img"`: hình ảnh nằm bên trong cái Lightbox.
+
+## 3. Giải Nghĩa Các "Class" (`class="..."`)
+
+Class là các lớp style hoặc chức năng có thể **dùng lại nhiều lần** cho nhiều phần tử khác nhau.
+
+### A. Nhóm Class Cấu Trúc Bố Cục (Layout)
+
+* `.hero-content`: Khối chứa **nội dung chữ** (lời chào, bằng cấp, nút bấm) nằm ở nửa bên trái của màn hình đầu tiên.
+* `.hero-image`: Khối chứa **hình ảnh** (avatar của bạn) nằm ở nửa bên phải của màn hình đầu tiên.
+* `.projects-inner`: **Lõi của dự án.** Một khung ảo bọc toàn bộ nội dung bên trong một `section` để ép chúng ở giữa màn hình (max-width: 1200px) thay vì tràn sát mép trình duyệt.
+* `.grid-container`: **Khung lưới (Grid).** Chứa công thức chia cột tự động. Gắn class này vào một cụm thẻ, các thẻ bên trong lập tức tự động xếp thành hàng ngang và tự rớt dòng khi thu nhỏ trình duyệt.
+
+### B. Nhóm Class Thành Phần Giao Diện (UI Components)
+
+* `.logo`: Chữ "PHL." ở góc trái màn hình.
+* `.lang-btn`: Định dạng kiểu dáng (viền trắng, bo tròn, hover) cho nút đổi ngôn ngữ.
+* `.section-title`: **Tiêu đề phân khu.** Các chữ to như "Dự Án Nổi Bật", "Kỹ năng & Công cụ". Class này tự động tạo một vạch kẻ ngang màu xanh dưới chân chữ.
+* `.education-box`: **Hộp học vấn.** Cái ô màu trắng có viền xanh bên trái báo cáo bằng cấp FPT của bạn ở màn hình đầu.
+* `.contact-links`: Cụm chứa các nút tải CV, Github, Portfolio.
+* `.tags`: Cụm bọc các "từ khóa kỹ năng" (như GSAP, ABAP, Figma...).
+* `.lightbox-close`: **Nút Đóng (Close).** Dấu `X` góc trên bên phải khi đang mở ảnh to.
+
+### C. Nhóm Class Của Khối Thẻ (Card System)
+
+* `.card`: **Thẻ thông tin.** Tạo ra một khối hình chữ nhật nền trắng, bo góc 15px, có đổ bóng. Hover chuột vào thì nảy lên. Dùng chung cho tất cả các ô trong phần Kỹ năng, Dự án, Sở thích.
+* `.card-icon`: Định dạng các biểu tượng icon (hình cái máy bay, hình mã code, hình gamepad...) nằm ở trên cùng của mỗi `.card`. Làm to icon và tô màu xanh.
+
+### D. Nhóm Class Nút Bấm (Button System)
+
+* `.btn`: Kiểu dáng nền tảng cho mọi nút bấm (có padding, bo góc, transition).
+* `.btn-primary`: **(Primary).** nút "Tải CV". (1st op)
+* `.btn-outline`: **(Outline).** link Github, Portfolio. (2nd)
+
+### E. Nhóm Class Kích Hoạt Logic (JavaScript Hooks)
+
+* `.lang`: **Language (Ngôn ngữ).** Bất kỳ chữ nào muốn dịch song ngữ đều phải gắn class này. 
+* `.gsap-card`: **Thẻ có hiệu ứng GSAP.** Gắn vào các `.card`. JS (ScrollTrigger) sẽ làm khối thẻ trượt từ dưới lên và rõ dần ra khi người dùng cuộn chuột tới.
