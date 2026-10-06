@@ -223,15 +223,25 @@
             <div class="card gsap-card">
                 <i class="fas fa-gamepad card-icon" style="color: #3b82f6;"></i>
                 <h3 class="lang" data-vi="Trò Chơi (Games)" data-en="Games">Trò Chơi (Games)</h3>
-                <ul>
+                <div class="tags" style="margin-top: 15px;">
+                        <span>Minecraft</span>
+                        <span>Pubg Mobile</span>
+                        <span>Valorant</span>
+                        <span>Green Hell</span>
+                        <span>GTA V</span>
+                        <span>Age Of Empires</span>
+                        <span>...</span>
+                        <!-- <span>Web Development</span>
+                        <span>JSP & Java Servlets</span> -->
+                    </div>
+                <!-- <ul>
                     <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <b>PUBG
                             Mobile:</b> <span class="lang" data-vi="Thành viên năng nổ clan ʚBearGangɞ."
                             data-en="Active member of clan ʚBearGangɞ.">Thành viên năng nổ clan ʚBearGangɞ.</span></li>
-                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <b>Board
-                            Game:</b> <span class="lang" data-vi="Hosting và quản trò các buổi chơi nhóm."
-                            data-en="Hosting and moderating group play sessions.">Hosting và quản trò các buổi chơi
+                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <b>Minecraft:</b> <span class="lang" data-vi="Hosting và quản trò các buổi chơi nhóm."
+                            data-en="Hosting and moderating group play sessions.">Game yêu thích nhất
                             nhóm.</span></li>
-                </ul>
+                </ul> -->
             </div>
 
             <!-- Hobby 2 -->
@@ -244,9 +254,11 @@
                             data-en="Outdoor running & Cycling.">Chạy bộ ngoài trời & Đạp xe.</span></li>
                     <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
                             class="lang" data-vi="Nhảy dây." data-en="Jumping rope.">Nhảy dây.</span></li>
-                    <li>🔥 <i class="lang" data-vi="Đang thực hiện thử thách thói quen 100 ngày!"
+                            <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
+                            class="lang" data-vi="Chơi bóng rổ." data-en="Playing basketball.">Chơi bóng rổ.</span></li>
+                    <!-- <li>🔥 <i class="lang" data-vi="Đang thực hiện thử thách thói quen 100 ngày!"
                             data-en="Currently on a 100-day habit challenge!">Đang thực hiện thử thách thói quen 100
-                            ngày!</i></li>
+                            ngày!</i></li> -->
                 </ul>
             </div>
 
@@ -255,12 +267,18 @@
                 <i class="fas fa-book-reader card-icon" style="color: #8b5cf6;"></i>
                 <h3 class="lang" data-vi="Sách & Phim ảnh" data-en="Books & Movies">Sách & Phim ảnh</h3>
                 <ul>
-                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
+                    <!-- <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
                             class="lang" data-vi="Đọc và dịch Web Novels tiếng Trung. (VD: 《致我那菜市场的白月光》)"
                             data-en="Reading and translating Chinese Web Novels. (e.g., 《致我那菜市场的白月光》)">Đọc và dịch Web
-                            Novels tiếng Trung. (VD: 《致我那菜市场的白月光》)</span></li>
+                            Novels tiếng Trung. (VD: 《致我那菜市场的白月光》)</span></li> -->
                     <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
-                            class="lang" data-vi="Theo dõi Drama." data-en="Watching TV Dramas.">Theo dõi Drama.</span>
+                            class="lang" data-vi="Xem Phim" data-en="Watching Movies and TV Shows">Xem Phim</span>
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
+                            class="lang" data-vi="Đọc tiểu thuyết và truyện tranh" data-en="Reading and translating Chinese Web Novels. (e.g., 《致我那菜市场的白月光》)">Đọc tiểu thuyết và truyện tranh</span>
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
+                            class="lang" data-vi="Dịch truyện" data-en="TranslatingWeb Novels.">Dịch truyện</span>
                     </li>
                 </ul>
             </div>
@@ -301,8 +319,8 @@
     </div>
 
 
-    <!-- =============== DÁN ĐOẠN NÀY VÀO ĐÂY =============== -->
-    <!-- KHUNG POPUP CHI TIẾT (Cho tính năng click vào Dự Án/Kỹ Năng) -->
+    
+    <!-- KHUNG POPUP-->
     <div id="detail-modal" class="detail-modal" onclick="closeDetailModal(event)">
         <div class="detail-modal-content">
             <span class="detail-modal-close" onclick="forceCloseDetailModal()">&times;</span>
@@ -313,7 +331,7 @@
                 <div class="detail-modal-text">
                     <h2 id="detail-modal-title">Tiêu đề</h2>
                     <div class="detail-modal-divider"></div>
-                    <p id="detail-modal-desc">Mô tả chi tiết sẽ hiện ở đây...</p>
+                    <p id="detail-modal-desc">Mô tả chi tiết...</p>
                 </div>
             </div>
         </div>
