@@ -192,10 +192,15 @@ section {
     border-radius: 15px;
     box-shadow: var(--shadow);
     border-bottom: 4px solid transparent;
-    transition: var(--transition);
+    /* transition: var(--transition); */
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .card:hover {
+    border-color: var(--green-primary) !important; 
+    box-shadow: 0 10px 25px rgba(22, 101, 52, 0.1) !important; 
+    transform: translateY(-5px); 
     transform: translateY(-10px);
     border-bottom: 4px solid var(--green-primary);
 }
@@ -483,3 +488,168 @@ footer p {
         font-size: 22px;
     }
 }
+
+/* --- Thiết kế ruột cho khối Xem thêm dự án --- */
+
+/* Vòng tròn bọc ngoài mũi tên */
+.view-more-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--green-light); /* Dùng màu xanh nhạt của bạn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.view-more-icon-wrapper i {
+    font-size: 24px;
+    color: var(--green-primary);
+    transition: var(--transition);
+}
+
+/* Hiệu ứng khi hover vào cả cái khối Card */
+.view-more-card:hover {
+    border-color: var(--green-primary) !important;
+}
+
+.view-more-card:hover .view-more-icon-wrapper {
+    background-color: var(--green-primary);
+}
+
+.view-more-card:hover .view-more-icon-wrapper i {
+    color: var(--white);
+    transform: translateX(5px); /* Mũi tên nhích nhẹ sang phải */
+}
+
+/* start project page css */
+/* --- Thiết kế Bộ Lọc Dự Án --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 8px 24px;
+    border: 2px solid var(--green-primary);
+    background-color: transparent;
+    color: var(--green-primary);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Trạng thái khi di chuột vào hoặc khi nút đang được chọn (Active) */
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--green-primary);
+    color: var(--white);
+}
+
+/* Hiệu ứng mượt mà khi dự án hiện ra */
+.project-item {
+    animation: fadeInScale 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+/* --- BỐ CỤC 1 DỰ ÁN = 1 SCREEN --- */
+/* --- BỐ CỤC SPLIT LAYOUT (35% TRÁI - 65% PHẢI) --- */
+
+.projects-list-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.split-layout {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 60px; /* Khoảng cách giữa chữ và ảnh */
+    margin-bottom: 100px; /* Khoảng cách giữa các dự án */
+}
+
+/* --- Cột trái: Chứa Logo & Nội dung --- */
+.split-left {
+    flex: 0 0 35%; /* Ép cứng chiều rộng chiếm 35% */
+}
+
+.project-logo {
+    max-width: 220px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.project-title {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+/* Hiệu ứng link tiêu đề giống GameAnalytics */
+.project-title a {
+    color: var(--green-primary);
+    text-decoration: none;
+    font-weight: 800;
+    transition: color 0.2s ease;
+}
+
+.project-title a:hover {
+    color: #14532d; /* Đổi màu xanh đậm hơn khi di chuột */
+    text-decoration: underline;
+}
+
+.split-left p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+/* --- Cột phải: Chứa Ảnh lớn --- */
+.split-right {
+    flex: 1; /* Chiếm 65% không gian còn lại */
+}
+
+.image-link {
+    display: block;
+    overflow: hidden; /* Cắt phần ảnh thừa nếu có hiệu ứng zoom */
+    border-radius: 8px; /* Bo góc nhẹ cho ảnh */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Bóng đổ rất nhẹ, tinh tế */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #f1f5f9; /* Viền siêu nhạt để tách biệt với nền trắng */
+}
+
+/* Hiệu ứng nẩy nhẹ bức ảnh khi đưa chuột vào */
+.image-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(22, 101, 52, 0.15);
+}
+
+/* --- Responsive (Thu nhỏ trên điện thoại) --- */
+@media (max-width: 900px) {
+    .split-layout {
+        flex-direction: column-reverse; /* Đảo ngược để ảnh hiện trên, chữ hiện dưới */
+        gap: 30px;
+    }
+    .split-left, .split-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
+/* end project page css */

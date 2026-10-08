@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Phan Hoàng Lan</title>
+    <!-----------------CSS link ------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="style.css"> <!-----------------Đổi đường dẫn nếu CSS của bạn nằm chỗ khác ------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!----------------- start header ------------------------------------------------------------------------------------------->
+    <header>
+        <a href="#" class="logo">BEAR<span>.</span></a>
+        <nav>
+            <a href="home.html"
+                style="color: var(--green-primary); text-decoration: none; font-weight: bold; font-size: 18px;">
+                <i class="fas fa-arrow-left"></i> <span class="lang" data-vi="Quay lại" data-en="Back to Home">Quay
+                    lại</span>
+            </a>
+            <button id="lang-btn" class="lang-btn">EN</button>
+        </nav>
+    </header>
+    <!----------------- end header ------------------------------------------------------------------------------------------->
+
+
+    <!-----------------  start HERO SECTION ------------------------------------------------------------------------------------------->
+    <section>
+
+        <h1 class="lang" data-vi="Tất cả dự án" data-en="All Projects"
+            style="text-align: center; color: var(--green-primary); margin-bottom: 30px;">Tất cả dự án</h1>
+
+        <!-----------------start filter ------------------------------------------------------------------------------------------->
+        <div class="filter-container">
+            <button class="filter-btn active lang" data-filter="all" data-vi="TẤT CẢ" data-en="ALL">TẤT CẢ</button>
+            <button class="filter-btn lang" data-filter="complete" data-vi="ĐÃ HOÀN THÀNH" data-en="COMPLETE">ĐÃ HOÀN
+                THÀNH</button>
+            <button class="filter-btn lang" data-filter="ongoing" data-vi="ĐANG PHÁT TRIỂN" data-en="ONGOING">ĐANG PHÁT
+                TRIỂN</button>
+        </div>
+        <!-----------------end filter ------------------------------------------------------------------------------------------->
+
+        <!-----------------start projects ------------------------------------------------------------------------------------------->
+        <div class="projects-list-container">
+
+            <!----------------- start complete projects (C)-->
+            <!-----------------start project C1 ------------------------------------------------------------------------------------------->
+            <div class="project-item split-layout" data-status="complete">
+
+                <!----------------- left column: Logo + data ------------------------------------------------------------------------------------------->
+                <div class="split-left">
+                    <!-----------------1. Logo project ------------------------------------------------------------------------------------------->
+                    <img src="https://placehold.co/300x100/ffffff/166534?text=PHARMA+Logo" alt="Pharma Logo"
+                        class="project-logo">
+
+                    <!-----------------2. Name (Clickable) ------------------------------------------------------------------------------------------->
+                    <h2 class="project-title">
+                        <a href="project-detail-pharma.html" class="lang" data-vi="> Hệ thống PHARMA Tool"
+                            data-en="> PHARMA System Tool">> Hệ thống PHARMA Tool</a>
+                    </h2>
+
+                    <!-----------------3. Mô tả chi tiết ------------------------------------------------------------------------------------------->
+                    <p class="lang"
+                        data-vi="Là người phát triển chính, tôi tham gia xây dựng hệ thống tự động hóa mua sắm trên nền tảng SAP S/4HANA MM, xử lý quy trình phê duyệt và xuất báo cáo Smartforms."
+                        data-en="As a core developer, I built an automated procurement system on SAP S/4HANA MM, handling approval workflows and exporting Smartforms reports.">
+                        Là người phát triển chính, tôi tham gia xây dựng hệ thống tự động hóa mua sắm trên nền tảng SAP
+                        S/4HANA MM, xử lý quy trình phê duyệt và xuất báo cáo Smartforms.
+                    </p>
+                </div>
+
+                <!----------------- right col (Clickable) ------------------------------------------------------------------------------------------->
+                <div class="split-right">
+                    <a href="project-detail-pharma.html" class="image-link">
+                        <img src="https://placehold.co/1200x800/e2e8f0/166534?text=PHARMA+Landing+Page"
+                            alt="Pharma Interface">
+                    </a>
+                </div>
+            </div>
+            <!----------------- end project C1 ------------------------------------------------------------------------------------------->
+
+            <!----------------- start project C2 ------------------------------------------------------------------------------------------->
+            <div class="project-item split-layout" data-status="complete">
+
+                <!----------------- left column: Logo + data ------------------------------------------------------------------------------------------->
+                <div class="split-left">
+                    <!----------------- 1. Logo project ------------------------------------------------------------------------------------------->
+                    <img src="https://placehold.co/300x100/ffffff/166534?text=DAM+Studio" alt="DAM Studio Logo"
+                        class="project-logo">
+
+                    <!----------------- 2. Name (Clickable) ------------------------------------------------------------------------------------------->
+                    <h2 class="project-title">
+                        <a href="project-detail-dam.html" class="lang" data-vi="> DÁM Studio" data-en="> DAM Studio">>
+                            DÁM Studio</a>
+                    </h2>
+
+                    <!----------------- 3. details ------------------------------------------------------------------------------------------->
+                    <p class="lang"
+                        data-vi="Thiết kế website bán áo và tích hợp công nghệ quét mã QR dẫn tới website kể chuyện."
+                        data-en="Designed a t-shirt selling website with integrated QR code technology leading to a storytelling website.">
+                        Thiết kế website bán áo và tích hợp công nghệ quét mã QR dẫn tới website kể chuyện.
+                    </p>
+                </div>
+
+                <!----------------- right col (Clickable) ------------------------------------------------------------------------------------------->
+                <div class="split-right">
+                    <a href="project-detail-dam.html" class="image-link">
+                        <img src="https://placehold.co/1200x800/e2e8f0/166534?text=DAM+Studio+Landing+Page"
+                            alt="DAM Studio Interface">
+                    </a>
+                </div>
+            </div>
+            <!----------------- end project C2 ------------------------------------------------------------------------------------------->
+            <!----------------- end complete projects (C)-->
+
+            <!----------------- start ongoing projects (O)-->
+            <!----------------- start project O1 ------------------------------------------------------------------------------------------->
+            <div class="project-item split-layout" data-status="ongoing">
+
+                <div class="split-left">
+                    <img src="https://placehold.co/300x100/ffffff/166534?text=NovelHub+Logo" alt="NovelHub Logo"
+                        class="project-logo">
+
+                    <h2 class="project-title">
+                        <a href="project-detail-novelhub.html" class="lang" data-vi="> Website NovelHub By Bear"
+                            data-en="> NovelHub By Bear">> Website NovelHub By Bear</a>
+                    </h2>
+
+                    <p class="lang"
+                        data-vi="Dự án cá nhân tập trung vào việc thiết kế giao diện UI/UX trên Figma và phát triển hệ thống lưu trữ truyện trên nền tảng MongoDB và React."
+                        data-en="Personal project focusing on UI/UX design on Figma and developing a novel storage system using MongoDB and React.">
+                        Dự án cá nhân tập trung vào việc thiết kế giao diện UI/UX trên Figma và phát triển hệ thống lưu
+                        trữ truyện trên nền tảng MongoDB và React.
+                    </p>
+                </div>
+
+                <div class="split-right">
+                    <a href="project-detail-novelhub.html" class="image-link">
+                        <img src="https://placehold.co/1200x800/e2e8f0/166534?text=NovelHub+Landing+Page"
+                            alt="NovelHub Interface">
+                    </a>
+                </div>
+            </div>
+            <!-----------------end project O1 ------------------------------------------------------------------------------------------->
+
+            <!-----------------start project O2 ------------------------------------------------------------------------------------------->
+            <div class="project-item split-layout" data-status="ongoing">
+
+                <div class="split-left">
+                    <img src="https://placehold.co/300x100/ffffff/166534?text=Phan+Hoang+Family+Logo"
+                        alt="Phan Hoang family Logo" class="project-logo">
+
+                    <h2 class="project-title">
+                        <a href="project-detail-phanhoangfamily.html" class="lang" data-vi="> Website Phan Hoang Family"
+                            data-en="> Phan Hoang Family">> Website Phan Hoang Family</a>
+                    </h2>
+
+                    <p class="lang"
+                        data-vi="Dự án cá nhân thiết kế website lưu trữ thông tin gia đình, bao gồm các thành viên, sự kiện và hình ảnh, cây gia phả, sử dụng React và mongoDB."
+                        data-en="Personal project designing a website to store family information, including members, events, and images, using React and MongoDB.">
+                        Dự án cá nhân thiết kế website lưu trữ thông tin gia đình, bao gồm các thành viên, sự kiện và
+                        hình ảnh, cây gia phả, sử dụng React và mongoDB.
+                    </p>
+                </div>
+
+                <div class="split-right">
+                    <a href="project-detail-phanhoangfamily.html" class="image-link">
+                        <img src="https://placehold.co/1200x800/e2e8f0/166534?text=Phan+Hoang+Family+Landing+Page"
+                            alt="Phan Hoang Family Interface">
+                    </a>
+                </div>
+            </div>
+            <!-----------------end project O2 ------------------------------------------------------------------------------------------->
+        </div>
+        <!-----------------end ongoing projects (O)-->
+
+    </section>
+    <!----------------- start HERO SECTION ------------------------------------------------------------------------------------------->
+
+    <!-----------------  start script src ------------------------------------------------------------------------------------------- >
+    <!-----------------  gsap src ------------------------------------------------------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-----------------  js  ------------------------------------------------------------------------------------------->
+    <script src="script.js"></script>
+    <!-----------------  end script src ------------------------------------------------------------------------------------------->
+</body>
+
+</html>

@@ -108,3 +108,39 @@ function forceCloseDetailModal() {
     detailModal.style.display = "none";
     document.body.style.overflow = "auto";
 }
+
+// start project page js
+// --------------------------------------------------------
+// 5. CHỨC NĂNG LỌC DỰ ÁN (ALL - ONGOING - COMPLETE)
+// --------------------------------------------------------
+// Đoạn code JS đã sửa lại cho đúng với giao diện Flexbox
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectItems = document.querySelectorAll('.project-item');
+
+if (filterBtns.length > 0) { 
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                const itemStatus = item.getAttribute('data-status');
+
+                if (filterValue === 'all' || itemStatus === filterValue) {
+                    // SỬA Ở ĐÂY: Trả lại thuộc tính flex cho khối dự án
+                    item.style.display = 'flex'; 
+                    
+                    item.style.animation = 'none';
+                    item.offsetHeight; 
+                    item.style.animation = null; 
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// end project page js
