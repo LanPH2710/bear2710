@@ -7,24 +7,24 @@
     <title>Game Library | Phan Hoàng Lan</title>
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/games.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="steam-page-body">
 
-    <header
-        style="background-color: #14532d; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;">
-        <a href="home.html" style="color: #fff; font-weight: 800; font-size: 24px; text-decoration: none;">
-            BEAR<span style="color: #22c55e;">.</span>
+   <header>
+    <a href="home.html" class="logo">BEAR<span>.</span></a>
+    <nav>
+        <a href="home.html">
+            <i class="fas fa-arrow-left"></i>
+            <span class="lang" data-vi="Quay lại" data-en="Back">Quay lại</span>
         </a>
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <a href="home.html" style="color: #22c55e; text-decoration: none; font-weight: bold;">
-                <i class="fas fa-arrow-left"></i> <span class="lang" data-vi="Quay lại" data-en="Back">Quay lại</span>
-            </a>
-            <button id="lang-btn"
-                style="padding: 5px 15px; border-radius: 20px; border: 1px solid #fff; background: transparent; color: #fff; cursor: pointer; font-weight: bold;">EN</button>
-        </div>
-    </header>
+        <button id="lang-btn" class="lang-btn">EN</button>
+    </nav>
+</header>
     <section>
         <!-- KHUNG STEAM LIBRARY (CHIA 2 CỘT TRÁI - PHẢI) -->
         <div class="steam-container">

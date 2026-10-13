@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveling Timeline | Phan Hoàng Lan</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: #f8fafc; margin: 0;">
+
+    <header>
+    <a href="home.html" class="logo">BEAR<span>.</span></a>
+    <nav>
+        <a href="home.html">
+            <i class="fas fa-arrow-left"></i>
+            <span class="lang" data-vi="Quay lại" data-en="Back">Quay lại</span>
+        </a>
+        <button id="lang-btn" class="lang-btn">EN</button>
+    </nav>
+</header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="travel-wrapper">
+        
+        <!-- Tiêu đề trang -->
+        <div class="travel-header">
+            <h1 class="lang" data-vi="Hành Trình Xê Dịch" data-en="My Travel Timeline">Hành Trình Xê Dịch</h1>
+            <p class="lang" 
+               data-vi="Lưu giữ những vùng đất đã đi qua, những khoảnh khắc đáng nhớ và góc nhìn mới sau mỗi chuyến đi." 
+               data-en="Capturing the places I've visited, memorable moments, and fresh perspectives after every trip.">
+               Lưu giữ những vùng đất đã đi qua, những khoảnh khắc đáng nhớ và góc nhìn mới sau mỗi chuyến đi.
+            </p>
+        </div>
+
+        <!-- KHUNG TIMELINE -->
+        <div class="timeline-container">
+
+            <!-- MỐC 1 -->
+            <div class="timeline-row">
+                <!-- Cột trái: Trục đường thẳng + Dấu chấm + Thời gian -->
+                <div class="timeline-milestone">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-date lang" data-vi="Tháng 08 / 2026" data-en="Aug 2026">Tháng 08 / 2026</span>
+                </div>
+
+                <!-- Cột phải: Ô thông tin địa điểm (Ảnh + Địa điểm + Cảm nhận) -->
+                <div class="timeline-card card">
+                    <div class="timeline-img-box">
+                        <img src="https://placehold.co/800x500/0284c7/ffffff?text=Nha+Trang+Trip" alt="Nha Trang">
+                    </div>
+                    <div class="timeline-info">
+                        <div class="location-tag">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="lang" data-vi="Khánh Hòa, Việt Nam" data-en="Khanh Hoa, Vietnam">Khánh Hòa, Việt Nam</span>
+                        </div>
+                        <h2 class="lang" data-vi="Nha Trang — Chuyến đi cùng hội bạn" data-en="Nha Trang — Group Getaway">Nha Trang — Chuyến đi cùng hội bạn</h2>
+                        <p class="lang" 
+                           data-vi="Chuyến nghỉ dưỡng rực rỡ nắng vàng biển xanh cùng cả nhóm. Đáng nhớ nhất là khoảnh khắc ngắm toàn cảnh vịnh biển từ cáp treo vượt biển sang VinWonders và những buổi tối tụ tập trò chuyện không dứt. Một chuyến đi nạp lại đầy ắp năng lượng tích cực."
+                           data-en="A sun-soaked coastal getaway with the whole group. The highlight was taking in the panoramic bay view from the sea-crossing cable car to VinWonders and endless late-night conversations. A trip that completely recharged my creative energy.">
+                           Chuyến nghỉ dưỡng rực rỡ nắng vàng biển xanh cùng cả nhóm. Đáng nhớ nhất là khoảnh khắc ngắm toàn cảnh vịnh biển từ cáp treo vượt biển sang VinWonders và những buổi tối tụ tập trò chuyện không dứt. Một chuyến đi nạp lại đầy ắp năng lượng tích cực.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MỐC 2 -->
+            <div class="timeline-row">
+                <div class="timeline-milestone">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-date lang" data-vi="Tháng 11 / 2025" data-en="Nov 2025">Tháng 11 / 2025</span>
+                </div>
+
+                <div class="timeline-card card">
+                    <div class="timeline-img-box">
+                        <img src="https://placehold.co/800x500/15803d/ffffff?text=Sapa+Cloud+Hunting" alt="Sapa">
+                    </div>
+                    <div class="timeline-info">
+                        <div class="location-tag">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="lang" data-vi="Lào Cai, Việt Nam" data-en="Lao Cai, Vietnam">Lào Cai, Việt Nam</span>
+                        </div>
+                        <h2 class="lang" data-vi="Sa Pa — Săn mây và sương mù" data-en="Sa Pa — Cloud Hunting & Mist">Sa Pa — Săn mây và sương mù</h2>
+                        <p class="lang" 
+                           data-vi="Cảm giác đứng giữa biển mây bồng bềnh và cái lạnh se sắt vùng cao mang lại một sự tĩnh lặng rất khác biệt. Những cung đường đèo uốn lượn và sắc màu thổ cẩm nơi đây giống như một thế giới fantasy sống động ngoài đời thực."
+                           data-en="Standing amidst a sea of floating clouds in the crisp highland chill brought a rare sense of calm. The winding mountain passes and vibrant brocade colors felt like stepping into a living fantasy world.">
+                           Cảm giác đứng giữa biển mây bồng bềnh và cái lạnh se sắt vùng cao mang lại một sự tĩnh lặng rất khác biệt. Những cung đường đèo uốn lượn và sắc màu thổ cẩm nơi đây giống như một thế giới fantasy sống động ngoài đời thực.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MỐC 3 -->
+            <div class="timeline-row">
+                <div class="timeline-milestone">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-date lang" data-vi="Mùa thu / 2024" data-en="Autumn 2024">Mùa thu / 2024</span>
+                </div>
+
+                <div class="timeline-card card">
+                    <div class="timeline-img-box">
+                        <img src="https://placehold.co/800x500/b45309/ffffff?text=Hanoi+Autumn" alt="Ha Noi">
+                    </div>
+                    <div class="timeline-info">
+                        <div class="location-tag">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="lang" data-vi="Hà Nội, Việt Nam" data-en="Hanoi, Vietnam">Hà Nội, Việt Nam</span>
+                        </div>
+                        <h2 class="lang" data-vi="Hà Nội — Những góc phố quen mà lạ" data-en="Hanoi — Familiar Yet New Corners">Hà Nội — Những góc phố quen mà lạ</h2>
+                        <p class="lang" 
+                           data-vi="Dành một ngày đóng vai khách du lịch ngay tại thành phố mình lớn lên. Đạp xe vòng quanh Hồ Tây đón gió thu, nhâm nhi cốm non và ngắm nhìn nhịp sống chậm rãi qua từng con ngõ nhỏ Ba Đình."
+                           data-en="Spending a day being a tourist in my own hometown. Cycling around West Lake in the autumn breeze, enjoying young green rice, and watching life slow down through the small alleys of Ba Dinh.">
+                           Dành một ngày đóng vai khách du lịch ngay tại thành phố mình lớn lên. Đạp xe vòng quanh Hồ Tây đón gió thu, nhâm nhi cốm non và ngắm nhìn nhịp sống chậm rãi qua từng con ngõ nhỏ Ba Đình.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Nhúng GSAP & Script chung -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

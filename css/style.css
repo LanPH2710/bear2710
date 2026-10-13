@@ -32,62 +32,86 @@ body {
 }
 
 /* --- Header & Navigation --- */
+/* --- Header & Navigation (Đồng bộ toàn bộ các trang) --- */
 header {
-    background-color: var(--green-forest);
+    background-color: var(--green-forest, #14532d);
     padding: 15px 5%;
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: var(--shadow);
+    box-sizing: border-box;
 }
 
 .logo {
-    color: var(--white);
+    color: var(--white, #ffffff);
     font-size: 24px;
     font-weight: 700;
     text-decoration: none;
+    letter-spacing: 0.5px;
+    
 }
 
 .logo span {
-    color: var(--green-primary);
+    color: var(--green-primary, #22c55e);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
 }
 
 nav a {
-    color: var(--white);
+    color: var(--white, #ffffff);
     text-decoration: none;
-    margin-left: 20px;
+    font-size: 16px;
     font-weight: 600;
-    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    transition: var(--transition, all 0.3s ease);
 }
 
 nav a:hover {
-    color: var(--green-primary);
+    color: var(--green-primary, #22c55e);
 }
 
-/* Làm đẹp cho nút chuyển đổi ngôn ngữ */
+/* language btn */
 .lang-btn {
     background-color: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--white, #ffffff);
+    border: 2px solid var(--white, #ffffff);
     border-radius: 20px;
-    padding: 2px 12px;
-    font-weight: bold;
+    padding: 4px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
     cursor: pointer;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-    margin-left: 20px;
+    transition: var(--transition, all 0.3s ease);
 }
 
 .lang-btn:hover {
-    background-color: white;
-    color: var(--green-primary); /* Đã sửa cho khớp biến mới */
+    background-color: var(--white, #ffffff);
+    color: var(--green-primary, #22c55e);
 }
 
-/* --- Bố cục chung cho các phần (Sections) --- */
+
+.steam-page-body {
+    padding-top: 62px;
+}
+
+.travel-wrapper,
+main {
+    padding-top: 90px;
+}
+
+/* --- section layout --- */
 section {
     padding: 100px 5% 60px; /* Padding top lớn để không bị header che mất */
     max-width: 1200px;
@@ -654,3 +678,194 @@ footer p {
 
 /* end project page css */
 
+/* start traveling page css  */
+
+
+/* =========================================================
+   GIAO DIỆN TRANG DU LỊCH (TIMELINE LAYOUT)
+   ========================================================= */
+.travel-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 50px 20px 100px;
+}
+
+.travel-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.travel-header h1 {
+    font-size: 36px;
+    color: var(--green-primary, #166534);
+    margin-bottom: 12px;
+}
+
+.travel-header p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Khung chứa toàn bộ Timeline và đường kẻ dọc bên trái */
+.timeline-container {
+    position: relative;
+    padding-left: 30px; /* Chừa khoảng trống bên trái cho đường kẻ */
+}
+
+/* Đường thẳng chạy dọc từ trên xuống */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 15px; /* Vị trí đường thẳng bên trái */
+    width: 3px;
+    background: linear-gradient(to bottom, #22c55e, #bbf7d0);
+    border-radius: 3px;
+}
+
+/* Mỗi hàng gồm: Cột mốc thời gian (Trái) + Khung địa điểm (Phải) */
+.timeline-row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    margin-bottom: 55px;
+}
+
+.timeline-row:last-child {
+    margin-bottom: 0;
+}
+
+/* --- CỘT TRÁI: DẤU CHẤM & MỐC THỜI GIAN --- */
+.timeline-milestone {
+    position: relative;
+    min-width: 145px;
+    padding-top: 18px;
+}
+
+/* Dấu chấm tròn nằm đè lên đường thẳng */
+.timeline-dot {
+    position: absolute;
+    left: -23px; /* Căn chuẩn tâm vào đường thẳng */
+    top: 22px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 4px #dcfce7;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+/* Nhãn hiển thị mốc thời gian */
+.timeline-date {
+    display: inline-block;
+    background-color: #dcfce7;
+    color: #166534;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #86efac;
+}
+
+/* Khi di chuột vào dòng đó -> Dấu chấm phóng to và đậm màu lên */
+.timeline-row:hover .timeline-dot {
+    background-color: #166534;
+    transform: scale(1.25);
+    box-shadow: 0 0 0 6px #bbf7d0;
+}
+
+/* --- CỘT PHẢI: Ô THÔNG TIN ĐỊA ĐIỂM --- */
+.timeline-card {
+    flex: 1;
+    display: flex;
+    gap: 28px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    cursor: default;
+}
+
+/* Khung ảnh bên trong ô */
+.timeline-img-box {
+    flex: 0 0 280px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.timeline-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.timeline-card:hover .timeline-img-box img {
+    transform: scale(1.06); /* Zoom nhẹ ảnh khi di chuột vào thẻ */
+}
+
+/* Khung chữ (Địa điểm + Cảm nhận) */
+.timeline-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: #22c55e;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.timeline-info h2 {
+    font-size: 22px;
+    color: #166534;
+    margin: 0 0 12px 0;
+}
+
+.timeline-info p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
+
+/* Responsive trên màn hình nhỏ / Điện thoại */
+@media (max-width: 768px) {
+    .timeline-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .timeline-milestone {
+        padding-top: 0;
+    }
+    .timeline-dot {
+        top: 6px;
+    }
+    .timeline-card {
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .timeline-img-box {
+        flex: none;
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* end traveling page css   */
