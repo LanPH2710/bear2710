@@ -1,147 +1,150 @@
-// --------------------------------------------------------
-// 1. TÍNH NĂNG PHÓNG TO ẢNH (JavaScript cơ bản)
-// --------------------------------------------------------
+window.currentLang = "vi";
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
+const detailModal = document.getElementById("detail-modal");
+const modalImage = document.getElementById("detail-modal-img");
+const modalTitle = document.getElementById("detail-modal-title");
+const modalDescription = document.getElementById("detail-modal-desc");
+const langButton = document.getElementById("lang-btn");
+let previousBodyOverflow = "";
 
-function openLightbox(imageSrc) {
+function openLightbox(imageSrc, altText = "Ảnh phóng to") {
+    if (!lightbox || !lightboxImg) return;
     lightboxImg.src = imageSrc;
+    lightboxImg.alt = altText;
     lightbox.style.display = "flex";
+    previousBodyOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 }
 
 function closeLightbox() {
+    if (!lightbox) return;
     lightbox.style.display = "none";
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = previousBodyOverflow;
 }
 
-// --------------------------------------------------------
-// 2. HIỆU ỨNG CHUYỂN ĐỘNG VỚI GSAP
-// --------------------------------------------------------
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".hero-content", {
-    y: 50, 
-    opacity: 0, 
-    duration: 1, 
-    delay: 0.2
-});
-
-gsap.from(".hero-image", {
-    scale: 0.8, 
-    opacity: 0, 
-    duration: 1, 
-    delay: 0.4 
-});
-
-const cards = document.querySelectorAll(".gsap-card");
-cards.forEach((card) => {
-    gsap.from(card, {
-        scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out"
-    });
-});
-
-// --------------------------------------------------------
-// 3. CHỨC NĂNG CHUYỂN ĐỔI NGÔN NGỮ (VI / EN)
-// --------------------------------------------------------
-const langBtn = document.getElementById("lang-btn");
-const langElements = document.querySelectorAll(".lang"); 
-let currentLang = "vi";
-
-langBtn.addEventListener("click", function() {
-    currentLang = currentLang === "vi" ? "en" : "vi";
-    langBtn.textContent = currentLang === "vi" ? "EN" : "VI"; 
-
-    langElements.forEach(el => {
-        // Dùng innerHTML thay vì textContent để giữ lại các thẻ HTML bên trong như <br>
-        el.innerHTML = el.getAttribute(`data-${currentLang}`);
-    });
-});
-
-// --------------------------------------------------------
-// 4. popup detail
-// --------------------------------------------------------
-const detailModal = document.getElementById("detail-modal");
-const dmImg = document.getElementById("detail-modal-img");
-const dmTitle = document.getElementById("detail-modal-title");
-const dmDesc = document.getElementById("detail-modal-desc");
-const popupTriggers = document.querySelectorAll(".popup-trigger");
-
-// Duyệt qua tất cả các thẻ có class 'popup-trigger'
-popupTriggers.forEach(card => {
-    card.addEventListener("click", function() {
-        // Lấy dữ liệu từ các thuộc tính data- của cái thẻ vừa bị click
-        const imgSrc = this.getAttribute("data-img");
-        
-        // Dùng biến currentLang (từ phần dịch thuật) để biết đang ở ngôn ngữ nào
-        const title = this.getAttribute(`data-title-${currentLang}`);
-        const desc = this.getAttribute(`data-desc-${currentLang}`);
-
-        // Bơm dữ liệu vào Khung Modal
-        dmImg.src = imgSrc;
-        dmTitle.innerHTML = title;
-        dmDesc.innerHTML = desc;
-
-        // Hiển thị Modal
-        detailModal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Khóa cuộn trang nền
-    });
-});
-
-// Hàm đóng Modal khi click ra khoảng đen bên ngoài
 function closeDetailModal(event) {
-    // Chỉ đóng khi bấm đúng vào lớp nền đen (không đóng nếu bấm vào thẻ trắng bên trong)
-    if (event.target === detailModal) {
-        forceCloseDetailModal();
-    }
+    if (event && event.target !== detailModal) return;
+    forceCloseDetailModal();
 }
 
-// Hàm đóng Modal khi bấm nút X
 function forceCloseDetailModal() {
+    if (!detailModal) return;
     detailModal.style.display = "none";
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = previousBodyOverflow;
 }
 
-// start project page js
-// --------------------------------------------------------
-// 5. prj filter
-// --------------------------------------------------------
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+window.closeDetailModal = closeDetailModal;
+window.forceCloseDetailModal = forceCloseDetailModal;
 
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectItems = document.querySelectorAll('.project-item');
+if (langButton) {
+    langButton.addEventListener("click", () => {
+        window.currentLang = window.currentLang === "vi" ? "en" : "vi";
+        const language = window.currentLang;
+        langButton.textContent = language === "vi" ? "EN" : "VI";
+        document.documentElement.lang = language;
 
-if (filterBtns.length > 0) { 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+        document.querySelectorAll(".lang").forEach((element) => {
+            const translation = element.getAttribute(`data-${language}`);
+            if (translation !== null) element.innerHTML = translation;
+        });
 
-            const filterValue = this.getAttribute('data-filter');
+        document.querySelectorAll("[data-placeholder-vi][data-placeholder-en]").forEach((element) => {
+            element.placeholder = element.getAttribute(`data-placeholder-${language}`);
+        });
 
-            projectItems.forEach(item => {
-                const itemStatus = item.getAttribute('data-status');
+        window.dispatchEvent(new CustomEvent("languagechange", { detail: { language } }));
+    });
+}
 
-                if (filterValue === 'all' || itemStatus === filterValue) {
-                    // SỬA Ở ĐÂY: Trả lại thuộc tính flex cho khối dự án
-                    item.style.display = 'flex'; 
-                    
-                    item.style.animation = 'none';
-                    item.offsetHeight; 
-                    item.style.animation = null; 
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+document.querySelectorAll(".hero-image img").forEach((image) => {
+    image.addEventListener("click", () => openLightbox(image.currentSrc || image.src, image.alt));
+});
+
+document.querySelectorAll(".popup-trigger").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+        if (!detailModal || !modalImage || !modalTitle || !modalDescription) return;
+
+        const imageSource = trigger.getAttribute("data-img");
+        if (!imageSource) return;
+
+        modalImage.src = imageSource;
+        modalImage.alt = trigger.querySelector("h3")?.textContent.trim() || "Project preview";
+        modalTitle.textContent = trigger.getAttribute(`data-title-${window.currentLang}`) || "";
+        modalDescription.textContent = trigger.getAttribute(`data-desc-${window.currentLang}`) || "";
+        detailModal.style.display = "flex";
+        previousBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+    });
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    closeLightbox();
+    forceCloseDetailModal();
+});
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectItems = document.querySelectorAll(".project-item");
+
+filterButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", button.classList.contains("active") ? "true" : "false");
+    button.addEventListener("click", () => {
+        filterButtons.forEach((item) => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-pressed", String(active));
+        });
+
+        const selectedStatus = button.getAttribute("data-filter");
+        projectItems.forEach((project) => {
+            project.hidden = selectedStatus !== "all" && project.getAttribute("data-status") !== selectedStatus;
         });
     });
+});
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (window.gsap && !reduceMotion) {
+    if (window.ScrollTrigger) window.gsap.registerPlugin(window.ScrollTrigger);
+
+    const heroContent = document.querySelector(".hero-content");
+    const heroImage = document.querySelector(".hero-image");
+    if (heroContent) {
+        window.gsap.from(heroContent, {
+            y: 28,
+            opacity: 0,
+            duration: 0.85,
+            delay: 0.08,
+            ease: "power3.out"
+        });
+    }
+    if (heroImage) {
+        window.gsap.from(heroImage, {
+            y: 18,
+            opacity: 0,
+            duration: 1,
+            delay: 0.18,
+            ease: "power3.out"
+        });
+    }
+
+    document.querySelectorAll(".gsap-card, .project-item, .timeline-row").forEach((item) => {
+        const animation = {
+            y: 24,
+            opacity: 0,
+            duration: 0.72,
+            ease: "power3.out"
+        };
+        if (window.ScrollTrigger) {
+            animation.scrollTrigger = {
+                trigger: item,
+                start: "top 88%",
+                once: true
+            };
+        }
+        window.gsap.from(item, animation);
+    });
 }
-
-// end project page js
-

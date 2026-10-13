@@ -4,109 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thư viện game và ghi chú cá nhân của Phan Hoàng Lan.">
+    <meta name="theme-color" content="#14532d">
     <title>Game Library | Phan Hoàng Lan</title>
-    <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" href="css/games.css"> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/games.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="steam-page-body">
+    <a class="skip-link" href="#game-library">Bỏ qua điều hướng</a>
 
-   <header>
-    <a href="home.html" class="logo">BEAR<span>.</span></a>
-    <nav>
-        <a href="home.html">
-            <i class="fas fa-arrow-left"></i>
-            <span class="lang" data-vi="Quay lại" data-en="Back">Quay lại</span>
-        </a>
-        <button id="lang-btn" class="lang-btn">EN</button>
-    </nav>
-</header>
-    <section>
-        <!-- KHUNG STEAM LIBRARY (CHIA 2 CỘT TRÁI - PHẢI) -->
-        <div class="steam-container">
+    <header>
+        <a href="home.html" class="logo" aria-label="BEAR, trang chủ">BEAR<span>.</span></a>
+        <nav aria-label="Điều hướng chính">
+            <a href="home.html">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                <span class="lang" data-vi="Quay lại" data-en="Back">Quay lại</span>
+            </a>
+            <button id="lang-btn" class="lang-btn" type="button" aria-label="Switch language">EN</button>
+        </nav>
+    </header>
 
-            <!-- CỘT TRÁI: DANH SÁCH GAME (CÓ THANH SCROLL & TÌM KIẾM) -->
-            <aside class="steam-sidebar">
-                <div class="sidebar-header">
-                    <i class="fas fa-gamepad"></i>
-                    <span class="lang" data-vi="THƯ VIỆN GAME" data-en="GAMES LIBRARY">THƯ VIỆN GAME</span>
+    <main id="game-library" class="steam-container">
+        <aside class="steam-sidebar" aria-label="Danh sách trò chơi">
+            <div class="sidebar-header">
+                <i class="fas fa-gamepad" aria-hidden="true"></i>
+                <span class="lang" data-vi="THƯ VIỆN GAME" data-en="GAMES LIBRARY">THƯ VIỆN GAME</span>
+            </div>
+
+            <label class="sidebar-search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="search" id="game-search-input" placeholder="Tìm trò chơi..." aria-label="Tìm trò chơi"
+                    data-placeholder-vi="Tìm trò chơi..." data-placeholder-en="Search games...">
+            </label>
+            <ul class="steam-game-list" id="steam-game-list" aria-live="polite"></ul>
+        </aside>
+
+        <section class="steam-main-content" aria-label="Thông tin trò chơi">
+            <div class="game-gallery-slider" aria-label="Ảnh trò chơi">
+                <button class="slider-btn prev-btn" id="prev-img-btn" type="button" aria-label="Ảnh trước">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <img id="game-slider-img" src="" alt="Ảnh trò chơi">
+                <button class="slider-btn next-btn" id="next-img-btn" type="button" aria-label="Ảnh tiếp theo">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <div class="slider-dots" id="slider-dots" aria-label="Chọn ảnh"></div>
+            </div>
+
+            <div class="steam-stats-bar">
+                <div class="steam-play-badge">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    <span class="lang" data-vi="ĐÃ TRẢI NGHIỆM" data-en="EXPERIENCED">ĐÃ TRẢI NGHIỆM</span>
                 </div>
-
-                <!-- Ô tìm kiếm nhanh giống Steam -->
-                <div class="sidebar-search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="game-search-input" placeholder="Search games...">
+                <div class="stat-box">
+                    <span class="stat-label lang" data-vi="THỜI GIAN CHƠI" data-en="PLAYING TIME">THỜI GIAN CHƠI</span>
+                    <span class="stat-value" id="game-since">Từ năm 2023</span>
                 </div>
-
-                <!-- Danh sách game có nút Scroll (Sẽ được JS tự động đổ vào đây) -->
-                <ul class="steam-game-list" id="steam-game-list"></ul>
-            </aside>
-
-            <!-- CỘT PHẢI: CHI TIẾT GAME & SLIDER ẢNH -->
-            <main class="steam-main-content">
-
-                <!-- 1. Khung Slider Hình ảnh (Có mũi tên qua lại) -->
-                <div class="game-gallery-slider">
-                    <button class="slider-btn prev-btn" id="prev-img-btn"><i class="fas fa-chevron-left"></i></button>
-                    <img id="game-slider-img" src="" alt="Game Screenshot">
-                    <button class="slider-btn next-btn" id="next-img-btn"><i class="fas fa-chevron-right"></i></button>
-
-                    <!-- Chấm tròn báo vị trí ảnh -->
-                    <div class="slider-dots" id="slider-dots"></div>
+                <div class="stat-box">
+                    <span class="stat-label lang" data-vi="THỂ LOẠI" data-en="GENRE">THỂ LOẠI</span>
+                    <span class="stat-value" id="game-genre">Hành động / Co-op</span>
                 </div>
-
-                <!-- 2.Thời gian chơi, Thể loại, Vai trò...-->
-                <div class="steam-stats-bar">
-                    <div class="steam-play-badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span class="lang" data-vi="ĐÃ TRẢI NGHIỆM" data-en="EXPERIENCED">ĐÃ TRẢI NGHIỆM</span>
-                    </div>
-
-                    <div class="stat-box">
-                        <span class="stat-label lang" data-vi="THỜI GIAN CHƠI" data-en="PLAYING TIME">THỜI GIAN CHƠI</span>
-                        <span class="stat-value" id="game-since">Since 2023</span>
-                    </div>
-
-                    <div class="stat-box">
-                        <span class="stat-label lang" data-vi="THỂ LOẠI" data-en="GENRE">THỂ LOẠI</span>
-                        <span class="stat-value" id="game-genre">Action / Co-op</span>
-                    </div>
-
-                    <div class="stat-box">
-                        <span class="stat-label lang" data-vi="ĐIỂM NHẤN / CLAN" data-en="HIGHLIGHT / CLAN">ĐIỂM NHẤN /
-                            CLAN</span>
-                        <span class="stat-value" id="game-highlight">Team Player</span>
-                    </div>
+                <div class="stat-box">
+                    <span class="stat-label lang" data-vi="ĐIỂM NHẤN / CLAN" data-en="HIGHLIGHT / CLAN">ĐIỂM NHẤN / CLAN</span>
+                    <span class="stat-value" id="game-highlight">Đồng đội</span>
                 </div>
+            </div>
 
-                <!-- 3. Tên Game & Cảm nhận chi tiết -->
-                <div class="steam-review-section">
-                    <h1 id="game-title">Tên Game</h1>
-
-                    <div class="review-card">
-                        <div class="review-header">
-                            <i class="fas fa-quote-left"></i>
-                            <span class="lang" data-vi="GÓC NHÌN & TRẢI NGHIỆM CÁ NHÂN"
-                                data-en="PERSONAL EXPERIENCE & GAME DESIGN NOTES">GÓC NHÌN & TRẢI NGHIỆM CÁ NHÂN</span>
-                        </div>
-                        <div id="game-review-text" class="review-body">
-                            <!-- review data -->
-                        </div>
+            <section class="steam-review-section" aria-live="polite">
+                <h1 id="game-title">Tên game</h1>
+                <article class="review-card">
+                    <div class="review-header">
+                        <i class="fas fa-quote-left" aria-hidden="true"></i>
+                        <span class="lang" data-vi="GÓC NHÌN & TRẢI NGHIỆM CÁ NHÂN"
+                            data-en="PERSONAL EXPERIENCE & GAME DESIGN NOTES">GÓC NHÌN & TRẢI NGHIỆM CÁ NHÂN</span>
                     </div>
-                </div>
+                    <div id="game-review-text" class="review-body"></div>
+                </article>
+            </section>
+        </section>
+    </main>
 
-            </main>
-        </div>
-
-    </body>section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <script src="js/script.js"></script> 
-        <script src="js/games.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/games.js"></script>
 </body>
 
 </html>

@@ -57,7 +57,7 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/dc2626/ffffff?text=Valorant+-+Agent+Synergy+2'
             ],
             review_vi: 'Sự giao thoa sắc bén giữa kỹ năng đấu súng chính xác và bộ kỹ năng đặc vụ (Agent Utility). Chơi Valorant giúp mình quan sát rõ cách thiết kế bản đồ (Level Design) với các điểm nghẽn (Chokepoints) đặc trưng, cùng hệ thống kinh tế mua sắm đầu mỗi vòng đấu buộc cả đội phải tính toán chiến thuật liên tục.',
-            review_en: 'A sharp intersection of precise gunplay and tactical agent utility. Playing Valorant deepened my appreciation for competitive Level Design—specifically how chokepoints, sightlines, and the round-by-round economy system force constant strategic adaptation.'
+            review_en: 'A sharp intersection of precise gunplay and tactical agent utility. Playing Valorant deepened my appreciation for competitive Level Design, specifically how chokepoints, sightlines, and the round-by-round economy system force constant strategic adaptation.'
         },
         {
             id: 'greenhell',
@@ -111,6 +111,7 @@ if (gameListEl) {
 
     let currentGameIndex = 0;
     let currentImgIndex = 0;
+    let sliderTransition;
 
     // Các phần tử DOM bên cột phải
     const sliderImg = document.getElementById('game-slider-img');
@@ -124,47 +125,76 @@ if (gameListEl) {
 
     // Hàm kiểm tra ngôn ngữ hiện tại (dựa trên nút #lang-btn)
     function getCurrentLang() {
-        const langBtn = document.getElementById('lang-btn');
-        // Nếu nút đang hiện chữ "EN" nghĩa là web đang ở tiếng Việt ('vi')
-        return (langBtn && langBtn.innerText.trim() === 'VI') ? 'en' : 'vi';
+        return window.currentLang || 'vi';
     }
 
-    // 1. Vẽ danh sách game bên cột trái
     function renderGameList(filterText = '') {
         gameListEl.innerHTML = '';
-        myGamesData.forEach((game, index) => {
-            if (game.name.toLowerCase().includes(filterText.toLowerCase())) {
-                const li = document.createElement('li');
-                li.className = `steam-game-item ${index === currentGameIndex ? 'active' : ''}`;
-                li.innerHTML = `
-                    <img src="${game.avatar}" alt="${game.name}">
-                    <span>${game.name}</span>
-                `;
-                li.addEventListener('click', () => {
-                    currentGameIndex = index;
-                    currentImgIndex = 0;
-                    renderGameList(searchInput.value);
-                    renderGameDetails();
-                });
-                gameListEl.appendChild(li);
-            }
+        const matchingGames = myGamesData
+            .map((game, index) => ({ game, index }))
+            .filter(({ game }) => game.name.toLowerCase().includes(filterText.trim().toLowerCase()));
+
+        if (matchingGames.length === 0) {
+            const emptyState = document.createElement('li');
+            emptyState.className = 'steam-empty-state';
+            emptyState.textContent = getCurrentLang() === 'vi'
+                ? 'Không tìm thấy trò chơi phù hợp.'
+                : 'No games match your search.';
+            gameListEl.appendChild(emptyState);
+            return;
+        }
+
+        matchingGames.forEach(({ game, index }) => {
+            const item = document.createElement('li');
+            item.className = `steam-game-item ${index === currentGameIndex ? 'active' : ''}`;
+            item.tabIndex = 0;
+            item.setAttribute('role', 'button');
+            item.setAttribute('aria-pressed', String(index === currentGameIndex));
+
+            const avatar = document.createElement('img');
+            avatar.src = game.avatar;
+            avatar.alt = '';
+            avatar.setAttribute('aria-hidden', 'true');
+
+            const name = document.createElement('span');
+            name.textContent = game.name;
+            item.append(avatar, name);
+
+            const selectGame = () => {
+                currentGameIndex = index;
+                currentImgIndex = 0;
+                renderGameList(searchInput.value);
+                renderGameDetails();
+            };
+
+            item.addEventListener('click', selectGame);
+            item.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    selectGame();
+                }
+            });
+            gameListEl.appendChild(item);
         });
     }
 
-    // 2. Cập nhật hình ảnh trong Slider
     function updateSliderImage() {
         const game = myGamesData[currentGameIndex];
+        if (sliderTransition) window.clearTimeout(sliderTransition);
         sliderImg.style.opacity = 0;
-        setTimeout(() => {
+        sliderTransition = window.setTimeout(() => {
             sliderImg.src = game.images[currentImgIndex];
+            sliderImg.alt = `${game.name} gameplay screenshot`;
             sliderImg.style.opacity = 1;
         }, 150);
 
-        // Vẽ các chấm tròn
         dotsContainer.innerHTML = '';
         game.images.forEach((_, idx) => {
-            const dot = document.createElement('span');
+            const dot = document.createElement('button');
+            dot.type = 'button';
             dot.className = `dot ${idx === currentImgIndex ? 'active' : ''}`;
+            dot.setAttribute('aria-label', getCurrentLang() === 'vi' ? `Xem ảnh ${idx + 1}` : `View image ${idx + 1}`);
+            dot.setAttribute('aria-current', String(idx === currentImgIndex));
             dot.addEventListener('click', () => {
                 currentImgIndex = idx;
                 updateSliderImage();
@@ -173,7 +203,6 @@ if (gameListEl) {
         });
     }
 
-    // 3. Hiển thị toàn bộ thông tin game bên cột phải
     function renderGameDetails() {
         const game = myGamesData[currentGameIndex];
         const lang = getCurrentLang();
@@ -181,7 +210,6 @@ if (gameListEl) {
         titleEl.innerText = game.name;
         sinceEl.innerText = game.since;
 
-        // Gắn thuộc tính data-vi và data-en để nút đổi ngôn ngữ hoạt động mượt mà
         genreEl.className = 'stat-value lang';
         genreEl.setAttribute('data-vi', game.genre_vi);
         genreEl.setAttribute('data-en', game.genre_en);
@@ -200,7 +228,6 @@ if (gameListEl) {
         updateSliderImage();
     }
 
-    // Sự kiện bấm mũi tên Trái / Phải để đổi ảnh
     document.getElementById('prev-img-btn').addEventListener('click', () => {
         const imgs = myGamesData[currentGameIndex].images;
         currentImgIndex = (currentImgIndex - 1 + imgs.length) % imgs.length;
@@ -213,9 +240,10 @@ if (gameListEl) {
         updateSliderImage();
     });
 
-    // Sự kiện tìm kiếm nhanh game ở cột trái
-    searchInput.addEventListener('input', (e) => {
-        renderGameList(e.target.value);
+    searchInput.addEventListener('input', (event) => renderGameList(event.target.value));
+    window.addEventListener('languagechange', () => {
+        renderGameList(searchInput.value);
+        renderGameDetails();
     });
 
     // Khởi chạy lần đầu tiên

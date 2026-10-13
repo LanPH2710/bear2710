@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio của Phan Hoàng Lan, kỹ sư phần mềm yêu thích thiết kế, lập trình và kể chuyện.">
+    <meta name="theme-color" content="#14532d">
     <title>Portfolio | Phan Hoàng Lan - Fresher</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
 
 <header>
-    <a href="#" class="logo">BEAR<span>.</span></a>
-    <nav>
+    <a href="#hero" class="logo" aria-label="BEAR, trang chủ">BEAR<span>.</span></a>
+    <nav aria-label="Điều hướng chính">
         <a href="#hero" class="lang" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
         <a href="#skills" class="lang" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</a>
         <a href="#projects" class="lang" data-vi="Dự án" data-en="Projects">Dự án</a>
@@ -25,6 +27,7 @@
     </nav>
 </header>
 
+<main id="main-content">
     <!-- HERO SECTION -->
     <section id="hero" class="hero">
         <div class="hero-content">
@@ -38,15 +41,18 @@
                 Tôi thiết kế, tôi lập trình, tôi kể chuyện, và tôi tận hưởng từng giây phút của hành trình này.</p>
 
             <div class="contact-links">
-                <a href="#" class="btn btn-primary"><i class="fas fa-file-pdf"></i> <span class="lang"
-                        data-vi="Tải CV (PDF)" data-en="Download CV">Tải CV (PDF)</span></a>
-                <a href="https://github.com/LanPH2710" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" class="btn btn-outline"><i class="fab fa-teddy-bear"></i> Portfolio</a>
+                <a href="https://github.com/LanPH2710" class="btn btn-primary" target="_blank" rel="noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="#projects" class="btn btn-outline">
+                    <i class="fas fa-folder-open" aria-hidden="true"></i>
+                    <span class="lang" data-vi="Xem dự án" data-en="View projects">Xem dự án</span>
+                </a>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="img/ava_img.jpg" alt="Phan Hoàng Lan" onclick="openLightbox(this.src)">
+            <img src="img/ava_img.jpg" alt="Phan Hoàng Lan">
         </div>
     </section>
 
@@ -125,7 +131,7 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" style="background-color: var(--white);">
+    <section id="projects">
         <div class="projects-inner">
             <h2 class="section-title lang" data-vi="Dự Án Học Thuật & Cá Nhân" data-en="Academic & Personal Projects">Dự
                 Án Học Thuật & Cá Nhân</h2>
@@ -371,9 +377,9 @@
             </a>
 
             <!-- Hobby 6 -->
-            <a href="foods.html" class="card gsap-card" style="text-decoration: none; color: inherit; display: block;">
-                <i class="fas fa-map-marked-alt card-icon" style="color: #48ec92;"></i>
-                <h3 class="lang" data-vi="Du Lịch" data-en="Traveling">Ẩm Thực</h3>
+            <div class="card gsap-card">
+                <i class="fas fa-utensils card-icon" aria-hidden="true"></i>
+                <h3 class="lang" data-vi="Ẩm thực" data-en="Food">Ẩm thực</h3>
                 <ul>
                     <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
                             class="lang"
@@ -382,27 +388,24 @@
                     <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <span
                             class="lang" data-vi="Du lịch mọi nơi" data-en="Traveling everywhere.">Bear ăn cả thế giới</span></li>
                 </ul>
-                <span class="tag-cue">
-                        <strong class="lang" data-vi="Xem hành trình" data-en="View Journey" style="font-weight: 600;">Xem
-                            menu</strong>
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
-            </a>
+            </div>
 
         </div>
     </section>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Ảnh phóng to">
+        <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Đóng ảnh">&times;</button>
         <img id="lightbox-img" src="" alt="Zoomed Profile">
     </div>
 
 
 
     <!-- KHUNG POPUP-->
-    <div id="detail-modal" class="detail-modal" onclick="closeDetailModal(event)">
+    <div id="detail-modal" class="detail-modal" onclick="closeDetailModal(event)" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
         <div class="detail-modal-content">
-            <span class="detail-modal-close" onclick="forceCloseDetailModal()">&times;</span>
+            <button class="detail-modal-close" type="button" onclick="forceCloseDetailModal()" aria-label="Đóng chi tiết">&times;</button>
             <div class="detail-modal-body">
                 <div class="detail-modal-img-container">
                     <img id="detail-modal-img" src="" alt="Project Preview">

@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traveling Timeline | Phan Hoàng Lan</title>
+    <meta name="description" content="Những chuyến đi và trải nghiệm đáng nhớ của Phan Hoàng Lan.">
+    <meta name="theme-color" content="#14532d">
+    <title>Hành trình du lịch | Phan Hoàng Lan</title>
     <link rel="stylesheet" href="css/style.css"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="background-color: #f8fafc; margin: 0;">
+<body>
+    <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
 
     <header>
     <a href="home.html" class="logo">BEAR<span>.</span></a>
-    <nav>
+    <nav aria-label="Điều hướng chính">
         <a href="home.html">
             <i class="fas fa-arrow-left"></i>
             <span class="lang" data-vi="Quay lại" data-en="Back">Quay lại</span>
         </a>
-        <button id="lang-btn" class="lang-btn">EN</button>
+        <button id="lang-btn" class="lang-btn" type="button" aria-label="Switch language">EN</button>
     </nav>
 </header>
 
     <!-- NỘI DUNG CHÍNH -->
-    <main class="travel-wrapper">
+    <main id="main-content" class="travel-wrapper">
         
         <!-- Tiêu đề trang -->
         <div class="travel-header">
@@ -57,7 +59,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span class="lang" data-vi="Khánh Hòa, Việt Nam" data-en="Khanh Hoa, Vietnam">Khánh Hòa, Việt Nam</span>
                         </div>
-                        <h2 class="lang" data-vi="Nha Trang — Chuyến đi cùng hội bạn" data-en="Nha Trang — Group Getaway">Nha Trang — Chuyến đi cùng hội bạn</h2>
+                        <h2 class="lang" data-vi="Nha Trang, chuyến đi cùng hội bạn" data-en="Nha Trang, a group getaway">Nha Trang, chuyến đi cùng hội bạn</h2>
                         <p class="lang" 
                            data-vi="Chuyến nghỉ dưỡng rực rỡ nắng vàng biển xanh cùng cả nhóm. Đáng nhớ nhất là khoảnh khắc ngắm toàn cảnh vịnh biển từ cáp treo vượt biển sang VinWonders và những buổi tối tụ tập trò chuyện không dứt. Một chuyến đi nạp lại đầy ắp năng lượng tích cực."
                            data-en="A sun-soaked coastal getaway with the whole group. The highlight was taking in the panoramic bay view from the sea-crossing cable car to VinWonders and endless late-night conversations. A trip that completely recharged my creative energy.">
@@ -83,7 +85,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span class="lang" data-vi="Lào Cai, Việt Nam" data-en="Lao Cai, Vietnam">Lào Cai, Việt Nam</span>
                         </div>
-                        <h2 class="lang" data-vi="Sa Pa — Săn mây và sương mù" data-en="Sa Pa — Cloud Hunting & Mist">Sa Pa — Săn mây và sương mù</h2>
+                        <h2 class="lang" data-vi="Sa Pa, săn mây và sương mù" data-en="Sa Pa, cloud hunting and mist">Sa Pa, săn mây và sương mù</h2>
                         <p class="lang" 
                            data-vi="Cảm giác đứng giữa biển mây bồng bềnh và cái lạnh se sắt vùng cao mang lại một sự tĩnh lặng rất khác biệt. Những cung đường đèo uốn lượn và sắc màu thổ cẩm nơi đây giống như một thế giới fantasy sống động ngoài đời thực."
                            data-en="Standing amidst a sea of floating clouds in the crisp highland chill brought a rare sense of calm. The winding mountain passes and vibrant brocade colors felt like stepping into a living fantasy world.">
@@ -109,7 +111,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <span class="lang" data-vi="Hà Nội, Việt Nam" data-en="Hanoi, Vietnam">Hà Nội, Việt Nam</span>
                         </div>
-                        <h2 class="lang" data-vi="Hà Nội — Những góc phố quen mà lạ" data-en="Hanoi — Familiar Yet New Corners">Hà Nội — Những góc phố quen mà lạ</h2>
+                        <h2 class="lang" data-vi="Hà Nội, những góc phố quen mà lạ" data-en="Hanoi, familiar yet new corners">Hà Nội, những góc phố quen mà lạ</h2>
                         <p class="lang" 
                            data-vi="Dành một ngày đóng vai khách du lịch ngay tại thành phố mình lớn lên. Đạp xe vòng quanh Hồ Tây đón gió thu, nhâm nhi cốm non và ngắm nhìn nhịp sống chậm rãi qua từng con ngõ nhỏ Ba Đình."
                            data-en="Spending a day being a tourist in my own hometown. Cycling around West Lake in the autumn breeze, enjoying young green rice, and watching life slow down through the small alleys of Ba Dinh.">
