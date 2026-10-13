@@ -1,0 +1,320 @@
+/* start games page */
+/* =========================================================
+   GIAO DIỆN TRANG GAME (STEAM LIBRARY LAYOUT)
+   ========================================================= */
+.steam-page-body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Cố định màn hình, chỉ cuộn bên trong 2 cột */
+    background-color: #f0fdf4;
+}
+
+.steam-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 65px); /* Trừ đi chiều cao Header */
+    overflow: hidden;
+}
+
+/* --- CỘT TRÁI: SIDEBAR DANH SÁCH GAME --- */
+.steam-sidebar {
+    width: 280px;
+    min-width: 280px;
+    background-color: #ffffff;
+    border-right: 1px solid #dcfce7;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 16px 20px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--green-primary, #166534);
+    letter-spacing: 1px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-search {
+    margin: 12px 15px;
+    padding: 8px 12px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-search i {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.sidebar-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Thanh cuộn (Scroll) bên trái */
+.steam-game-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Tuỳ chỉnh thanh Scrollbar cho gọn đẹp */
+.steam-game-list::-webkit-scrollbar {
+    width: 6px;
+}
+.steam-game-list::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+.steam-game-list::-webkit-scrollbar-thumb:hover {
+    background-color: #22c55e;
+}
+
+/* Từng dòng Game bên trái */
+.steam-game-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.steam-game-item:hover {
+    background-color: #f0fdf4;
+}
+
+.steam-game-item.active {
+    background-color: #dcfce7;
+    border-left-color: #166534;
+    font-weight: 700;
+    color: #166534;
+}
+
+.steam-game-item img {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.steam-game-item span {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- CỘT PHẢI: THÔNG TIN CHI TIẾT GAME --- */
+.steam-main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px 50px;
+}
+
+/* Khung Slider Ảnh */
+.game-gallery-slider {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #0f172a;
+    box-shadow: 0 10px 30px rgba(22, 101, 52, 0.12);
+}
+
+.game-gallery-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Nút mũi tên chuyển ảnh */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: none;
+    color: #166534;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.slider-btn:hover {
+    background-color: #22c55e;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* Chấm tròn dưới đáy ảnh */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #22c55e;
+    transform: scale(1.2);
+}
+
+/* Thanh thông số chuẩn bố cục Steam */
+.steam-stats-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    background-color: #ffffff;
+    padding: 18px 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.steam-play-badge {
+    background-color: #22c55e;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 3px;
+}
+
+/* Khu vực bài viết cảm nhận */
+.steam-review-section {
+    margin-top: 30px;
+}
+
+.steam-review-section h1 {
+    font-size: 32px;
+    color: #166534;
+    margin-bottom: 15px;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.review-header {
+    font-size: 13px;
+    font-weight: 800;
+    color: #22c55e;
+    letter-spacing: 0.8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.review-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #334155;
+}
+
+/* Responsive trên màn hình nhỏ */
+@media (max-width: 850px) {
+    .steam-page-body { overflow: auto; height: auto; }
+    .steam-container { flex-direction: column; height: auto; }
+    .steam-sidebar { width: 100%; max-height: 250px; }
+    .steam-main-content { padding: 20px; }
+    .game-gallery-slider { height: 240px; }
+}
+
+/* --- Thẻ Tag Gợi Ý Click (Visual Cue) --- */
+.tags .tag-cue {
+    background-color: #dcfce7 !important; /* Nền xanh lá nhạt */
+    color: var(--green-primary, #166534) !important; /* Chữ xanh đậm */
+    border: 1px solid #86efac !important; /* Viền xanh mảnh tạo điểm nhấn */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.tags .tag-cue i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Khi di chuột vào cả ô Card -> Thẻ tag đậm lên & Mũi tên trượt sang phải */
+.card:hover .tags .tag-cue {
+    background-color: var(--green-primary, #166534) !important;
+    color: #ffffff !important;
+    border-color: var(--green-primary, #166534) !important;
+    box-shadow: 0 4px 10px rgba(22, 101, 52, 0.2);
+}
+
+.card:hover .tags .tag-cue i {
+    transform: translateX(4px);
+}
+
+/* end games page  */

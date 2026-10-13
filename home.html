@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Phan Hoàng Lan - Fresher</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -276,9 +276,10 @@
 
         <div class="grid-container">
             <!-- Hobby 1 -->
-            <div class="card gsap-card">
+            <a href="games.html" class="card gsap-card" style="text-decoration: none; color: inherit; display: block;">
                 <i class="fas fa-gamepad card-icon" style="color: #3b82f6;"></i>
                 <h3 class="lang" data-vi="Trò Chơi (Games)" data-en="Games">Trò Chơi (Games)</h3>
+
                 <div class="tags" style="margin-top: 15px;">
                     <span>Minecraft</span>
                     <span>Pubg Mobile</span>
@@ -286,19 +287,13 @@
                     <span>Green Hell</span>
                     <span>GTA V</span>
                     <span>Age Of Empires</span>
-                    <span>...</span>
-                    <!-- <span>Web Development</span>
-                        <span>JSP & Java Servlets</span> -->
+                    <span class="tag-cue">
+                        <strong class="lang" data-vi="Xem thư viện" data-en="View Library" style="font-weight: 600;">Xem
+                            thư viện</strong>
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
-                <!-- <ul>
-                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <b>PUBG
-                            Mobile:</b> <span class="lang" data-vi="Thành viên năng nổ clan ʚBearGangɞ."
-                            data-en="Active member of clan ʚBearGangɞ.">Thành viên năng nổ clan ʚBearGangɞ.</span></li>
-                    <li><i class="fas fa-check" style="color: var(--green-primary); margin-right: 5px;"></i> <b>Minecraft:</b> <span class="lang" data-vi="Hosting và quản trò các buổi chơi nhóm."
-                            data-en="Hosting and moderating group play sessions.">Game yêu thích nhất
-                            nhóm.</span></li>
-                </ul> -->
-            </div>
+            </a>
 
             <!-- Hobby 2 -->
             <div class="card gsap-card">
@@ -357,7 +352,7 @@
             </div>
 
             <!-- Hobby 5 -->
-            <div class="card gsap-card">
+            <a href="traveling.html" class="card gsap-card" style="text-decoration: none; color: inherit; display: block;">
                 <i class="fas fa-map-marked-alt card-icon" style="color: #48ec92;"></i>
                 <h3 class="lang" data-vi="Du Lịch" data-en="Traveling">Du Lịch</h3>
                 <ul>
@@ -370,7 +365,12 @@
                             class="lang" data-vi="Du lịch mọi nơi" data-en="Traveling everywhere.">Du lịch mọi
                             nơi</span></li>
                 </ul>
-            </div>
+                <span class="tag-cue">
+                        <strong class="lang" data-vi="Xem hành trình" data-en="View Journey" style="font-weight: 600;">Xem
+                            hành trình</strong>
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+            </a>
         </div>
     </section>
 
@@ -399,7 +399,7 @@
     </div>
     <!-- ====================================================== -->
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

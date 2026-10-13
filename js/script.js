@@ -66,7 +66,7 @@ langBtn.addEventListener("click", function() {
 });
 
 // --------------------------------------------------------
-// 4. CHỨC NĂNG POPUP CHI TIẾT (Thay ruột tự động)
+// 4. popup detail
 // --------------------------------------------------------
 const detailModal = document.getElementById("detail-modal");
 const dmImg = document.getElementById("detail-modal-img");
@@ -111,9 +111,9 @@ function forceCloseDetailModal() {
 
 // start project page js
 // --------------------------------------------------------
-// 5. CHỨC NĂNG LỌC DỰ ÁN (ALL - ONGOING - COMPLETE)
+// 5. prj filter
 // --------------------------------------------------------
-// Đoạn code JS đã sửa lại cho đúng với giao diện Flexbox
+
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectItems = document.querySelectorAll('.project-item');
 
@@ -144,3 +144,4 @@ if (filterBtns.length > 0) {
 }
 
 // end project page js
+
