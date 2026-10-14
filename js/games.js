@@ -13,7 +13,7 @@ if (gameListEl) {
             id: 'minecraft',
             name: 'Minecraft',
             avatar: 'https://placehold.co/100x100/15803d/ffffff?text=MC',
-            since: 'Since 2018',
+            since: 'Since 2015',
             genre_vi: 'Sandbox / Sinh tồn & Sáng tạo',
             genre_en: 'Sandbox / Survival & Creative',
             highlight_vi: 'World Building & Redstone Logic',
@@ -23,14 +23,14 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/166534/ffffff?text=Minecraft+-+Redstone+Automation+2',
                 'https://placehold.co/1200x600/15803d/ffffff?text=Minecraft+-+Co-op+Server+3'
             ],
-            review_vi: 'Tựa game định hình tư duy không gian và tính tự do trong thiết kế của mình. Điều kỳ diệu nhất của Minecraft là cách những khối vuông đơn giản cùng hệ thống mạch Redstone có thể mô phỏng lại logic lập trình, cho phép người chơi tự đặt ra mục tiêu và tự viết nên câu chuyện của riêng mình.',
-            review_en: 'The game that shaped my spatial thinking and love for sandbox freedom. What fascinates me most about Minecraft is how simple blocks and Redstone circuits mirror programming logic, empowering players to set their own goals and craft their own emergent stories.'
+            review_vi: 'Tôi rất thích chơi game và thích chơi khá nhiều thể loại game như là multiplayer, đối kháng, xây dựng, khám phá thế giới mở và Minecraft có tất cả mọi thứ. Từ cơ chế, cách chơi, nhạc nền đến các thành tích và là 1 thế giới không bao giờ khám phá hết. Ngoài ra có thể custom để chơi các thể loại role khác nhau, mở và tự xây dựng server… 1 tựa game đã khẳng định được sự quan trọng nhất của game không nằm ở đồ họa mà nằm ở lối chơi. Đối với tôi Minecraft là game hay nhất mọi thời đại',
+            review_en: 'I really enjoy playing games and have played many different genres like multiplayer, competitive, building, and open-world exploration. Minecraft has it all. From its mechanics and gameplay to its soundtrack and achievements, it\'s a world that never gets old. Additionally, it can be customized for various role-playing experiences, allowing users to create their own servers... A game that has proven the most important aspect of gaming isn\'t graphics but rather the gameplay itself. For me, Minecraft is the best game of all time.'
         },
         {
             id: 'pubg',
             name: 'PUBG Mobile',
             avatar: 'https://placehold.co/100x100/ca8a04/ffffff?text=PUBG',
-            since: 'Since 2020',
+            since: 'Since 2018',
             genre_vi: 'Battle Royale / Bắn súng sinh tồn',
             genre_en: 'Battle Royale / Tactical Shooter',
             highlight_vi: 'Clan ʚBearGangɞ',
@@ -40,14 +40,14 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/a16207/ffffff?text=PUBG+Mobile+-+Tactical+Map+2',
                 'https://placehold.co/1200x600/ca8a04/ffffff?text=PUBG+Mobile+-+Winner+Chicken+Dinner+3'
             ],
-            review_vi: 'Tựa game gắn bó lâu dài nhất cùng những người đồng đội trong clan ʚBearGangɞ. Dưới góc độ thiết kế, PUBG Mobile làm cực kỳ tốt bài toán kiểm soát nhịp độ trận đấu (Pacing) qua cơ chế thu hẹp vòng bo và tỷ lệ Rủi ro - Phần thưởng (Risk vs. Reward) khi tranh chấp thính, biến mỗi ván đấu thành một kịch bản sinh tồn không bao giờ lặp lại.',
-            review_en: 'My longest-running game alongside my teammates in the ʚBearGangɞ clan. From a design standpoint, PUBG Mobile masters match pacing through its shrinking zone mechanics and Risk-vs-Reward airdrop engagements, turning every match into an unscripted survival drama.'
+            review_vi: 'Là một tựa game tôi gắn bó thời gian dài cùng bạn bè, PUBG Mobile sở hữu lối chơi đơn giản nhưng nhà phát hành đã xây dựng rất nhiều bản đồ map sự kiện hay và skin đẹp. 1 tựa game giải trí không cần máy tính, không cần chiến thuật nhiều, chỉ cần vào chơi cùng bạn bè rất tuyệt.',
+            review_en: 'A game I have spent a long time playing with friends, PUBG Mobile has simple gameplay, but the developers have created many exciting event maps and beautiful skins. It\'s a great casual game that doesn\'t require a computer or complex strategies, just jump in and play with friends.'
         },
         {
             id: 'valorant',
             name: 'Valorant',
             avatar: 'https://placehold.co/100x100/dc2626/ffffff?text=VAL',
-            since: 'Since 2022',
+            since: 'Since 2024',
             genre_vi: 'Bắn súng chiến thuật 5v5 (FPS)',
             genre_en: '5v5 Tactical Hero Shooter',
             highlight_vi: 'Map Control & Economy System',
@@ -56,7 +56,7 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/991b1b/ffffff?text=Valorant+-+Tactical+Setup+1',
                 'https://placehold.co/1200x600/dc2626/ffffff?text=Valorant+-+Agent+Synergy+2'
             ],
-            review_vi: 'Sự giao thoa sắc bén giữa kỹ năng đấu súng chính xác và bộ kỹ năng đặc vụ (Agent Utility). Chơi Valorant giúp mình quan sát rõ cách thiết kế bản đồ (Level Design) với các điểm nghẽn (Chokepoints) đặc trưng, cùng hệ thống kinh tế mua sắm đầu mỗi vòng đấu buộc cả đội phải tính toán chiến thuật liên tục.',
+            review_vi: '1 tựa game lấy bắn súng làm trọng tâm nhưng lại đặc biệt hơn các tựa game khác nhờ cơ chế sức mạnh của từng nhân vật cũng như sự đầu tư chỉnh chu cho các skin vũ khí. Tôi đã quen thêm được rất nhiều bạn bè mới nhờ Valorant và cũng học được nhiều bài học về chiến thuật, phối hợp đồng đội, quản lý kinh tế trong game.',
             review_en: 'A sharp intersection of precise gunplay and tactical agent utility. Playing Valorant deepened my appreciation for competitive Level Design, specifically how chokepoints, sightlines, and the round-by-round economy system force constant strategic adaptation.'
         },
         {
@@ -72,14 +72,14 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/065f46/ffffff?text=Green+Hell+-+Amazon+Rainforest+1',
                 'https://placehold.co/1200x600/047857/ffffff?text=Green+Hell+-+Smartwatch+UI+2'
             ],
-            review_vi: 'Một trải nghiệm sinh tồn cực kỳ chân thực giữa rừng rậm Amazon. Điểm mình tâm đắc nhất ở Green Hell là giao diện người dùng gắn liền với thế giới thực (Diegetic UI): thay vì hiện các thanh máu khô khan trên màn hình, người chơi phải tự xem đồng hồ thông minh để đo dinh dưỡng (Đạm, Béo, Tinh bột, Nước) và trực tiếp xoay kiểm tra từng vết thương trên cơ thể.',
-            review_en: 'A brutally realistic survival experience in the Amazon rainforest. My favorite design aspect of Green Hell is its Diegetic UI: instead of immersion-breaking HUD bars, players check a physical smartwatch to track macro-nutrients and manually inspect their limbs to treat wounds and parasites.'
+            review_vi: 'Một trải nghiệm sinh tồn cực kỳ chân thực và thú vị. Trải nghiệm cảm giác sinh tồn đúng nghĩa khi phải đối mặt với đủ mọi mối lo từ nhiễm trùng, đau ốm, xước xát, đói, mệt, buồn ngủ giữa rậm Amazon. Điều đặc biệt nhất là được trải nghiệm cảm giác sinh tồn cùng bạn bè, cùng nhau xây dựng nhà ở, cùng nhau chiến đấu với thổ dân và cung fnhau khám phá cốt truyện. Ngoài ra đồ họa game cũng cực kỳ đẹp mắt và chân thực khiến cảm giác nôn nao, sợ hãi hay tò mò cũng chân thực không kém.',
+            review_en: 'An immersive survival experience that captures the essence of true survival. Facing threats from infections, injuries, hunger, fatigue, and sleep deprivation in the Amazon jungle is intense. The most unique aspect is experiencing survival with friends—building shelters together, fighting off hostile tribes, and exploring the storyline as a team. The game\'s stunningly realistic graphics amplify feelings of anxiety, fear, and curiosity.'
         },
         {
             id: 'gtav',
             name: 'Grand Theft Auto V (GTA V)',
             avatar: 'https://placehold.co/100x100/1e293b/ffffff?text=GTA5',
-            since: 'Since 2021',
+            since: 'Since 2020',
             genre_vi: 'Thế giới mở / Hành động nhập vai',
             genre_en: 'Open-World / Action-Adventure',
             highlight_vi: 'Environmental Storytelling',
@@ -88,14 +88,14 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/0f172a/ffffff?text=GTA+V+-+Los+Santos+1',
                 'https://placehold.co/1200x600/334155/ffffff?text=GTA+V+-+Heist+Planning+2'
             ],
-            review_vi: 'Đỉnh cao của nghệ thuật thiết kế thế giới mở sống động và cơ chế kể chuyện qua môi trường (Environmental Storytelling). Cách GTA V cho phép chuyển đổi mượt mà giữa 3 nhân vật ngay trong một nhiệm vụ Heist giúp góc nhìn gameplay luôn tươi mới, dồn dập và giữ sự phấn khích ở mức tối đa.',
-            review_en: 'A benchmark in living open-world design and environmental storytelling. The seamless three-character switching mechanic during complex Heist missions keeps gameplay perspectives dynamic, cinematic, and relentlessly engaging.'
+            review_vi: 'Đỉnh cao của nghệ thuật thiết kế thế giới mở sống động với cốt truyện đặc sắc và lôi cuốn. Cách GTA V cho phép chuyển đổi mượt mà giữa 3 nhân vật ngay trong một nhiệm vụ Heist giúp góc nhìn gameplay luôn tươi mới, dồn dập và giữ sự phấn khích ở mức tối đa.',
+            review_en: 'A pinnacle of open-world design with a compelling narrative. GTA V\'s seamless character-switching during heist missions keeps gameplay fresh, fast-paced, and maximizes excitement. '
         },
         {
             id: 'aoe',
             name: 'Age Of Empires (Đế Chế)',
             avatar: 'https://placehold.co/100x100/b45309/ffffff?text=AoE',
-            since: 'Since 2017',
+            since: 'Since 2012',
             genre_vi: 'Chiến thuật thời gian thực (RTS)',
             genre_en: 'Real-Time Strategy (RTS)',
             highlight_vi: 'Resource Balancing & Tech Tree',
@@ -104,8 +104,8 @@ if (gameListEl) {
                 'https://placehold.co/1200x600/78350f/ffffff?text=Age+Of+Empires+-+Base+Building+1',
                 'https://placehold.co/1200x600/b45309/ffffff?text=Age+Of+Empires+-+RTS+Battles+2'
             ],
-            review_vi: 'Tựa game chiến thuật kinh điển dạy mình bài học đầu tiên về Quản trị tài nguyên (Thực, Gỗ, Vàng, Đá) và cân bằng bất đối xứng (Asymmetric Balance) giữa các nền văn minh. Cơ chế khắc chế binh chủng theo vòng tròn Kéo - Búa - Bao là nền tảng kinh điển nhưng luôn tạo ra chiều sâu chiến thuật vô tận.',
-            review_en: 'A classic RTS that taught me my first lessons in resource management (Food, Wood, Gold, Stone) and asymmetric civilization balancing. Its rock-paper-scissors unit counter system remains a timeless foundation for deep tactical decision-making.'
+            review_vi: 'Tựa game trên máy tính đầu tiên mình chơi và được dạy bởi bố mình. Một tựa game tuyệt vời khi chơi với bạn bè. Mặc dù bản thân chơi không hề giỏi nhưng mỗi lần ngồi chơi mình sẽ hoàn toàn bị cuốn vào game và không thể ngừng chơi. Mình đã chơi từ AOE I đến II và sau đó là III và IV nhưng bản khiến mình thấy hay và chân thực nhất là AOE II.',
+            review_en: 'The first computer game I played, taught by my father. An excellent game to play with friends. Although I am not particularly skilled at it, every time I sit down to play, I become completely immersed and cannot stop playing. I have played from AOE I to II and then III and IV, but the version that I find the most enjoyable and realistic is AOE II.'
         }
     ];
 
