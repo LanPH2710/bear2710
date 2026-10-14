@@ -19,9 +19,9 @@ if (gameListEl) {
             highlight_vi: 'World Building & Redstone Logic',
             highlight_en: 'World Building & Redstone Logic',
             images: [
-                'https://placehold.co/1200x600/14532d/ffffff?text=Minecraft+-+World+Building+1',
-                'https://placehold.co/1200x600/166534/ffffff?text=Minecraft+-+Redstone+Automation+2',
-                'https://placehold.co/1200x600/15803d/ffffff?text=Minecraft+-+Co-op+Server+3'
+                'img/games/minecraft/mc1.png',
+                'img/games/minecraft/mc2.png',
+                'img/games/minecraft/mc3.png'
             ],
             review_vi: 'Tôi rất thích chơi game và thích chơi khá nhiều thể loại game như là multiplayer, đối kháng, xây dựng, khám phá thế giới mở và Minecraft có tất cả mọi thứ. Từ cơ chế, cách chơi, nhạc nền đến các thành tích và là 1 thế giới không bao giờ khám phá hết. Ngoài ra có thể custom để chơi các thể loại role khác nhau, mở và tự xây dựng server… 1 tựa game đã khẳng định được sự quan trọng nhất của game không nằm ở đồ họa mà nằm ở lối chơi. Đối với tôi Minecraft là game hay nhất mọi thời đại',
             review_en: 'I really enjoy playing games and have played many different genres like multiplayer, competitive, building, and open-world exploration. Minecraft has it all. From its mechanics and gameplay to its soundtrack and achievements, it\'s a world that never gets old. Additionally, it can be customized for various role-playing experiences, allowing users to create their own servers... A game that has proven the most important aspect of gaming isn\'t graphics but rather the gameplay itself. For me, Minecraft is the best game of all time.'
